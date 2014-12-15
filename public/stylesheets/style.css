@@ -1,0 +1,44 @@
+*{margin:0;padding:0;border:0;}
+.container{width:1000px;margin:50px auto;}
+.logo{width:128px;height:70px;background:transparent url(../images/logo.png) no-repeat;}
+a{text-decoration: none;}
+/*   login form stuff start  */
+.login-content{width:500px;margin:70px auto 0;}
+.login-content>.logo{margin:10px auto;}
+.login-form{width: 323px;margin:0 auto;}
+.login-form input{display: block;width: 323px;text-align: center;height:2.6em;margin-top:20px;border: 1px #C1C1C1 solid;border-radius: 3px;color: #2D2D2D;outline: none;font-family: inherit;font-size:18px;}
+.login-form input[type='submit']{color: #ffffff;background: #3686BB;border: none;}
+.login-form input[type='submit']:hover{background: #0086BB;cursor: pointer;}
+
+
+/*   main stuff start  */
+
+.content{width:1000px;margin:0 auto;position: relative;}
+#sidebar{width:150px;position: absolute;}
+#sidebar>a{border-radius: 4px;background-color: #5EB348;color: #ffffff;display: block;font-size: 18px;font-weight: 300;line-height: 44px;margin: 0 auto;text-align: center;text-transform: uppercase;width: 145px;}
+#sidebar>a:hover{background-color:#7DC36B; }
+#main{
+width:793px;padding-left:200px;padding-top:20px;
+}
+#main h2{text-align: center;margin-bottom: 20px;border-bottom:1px solid #cccccc;padding-bottom: 20px;}
+#ot-flow-form{background:#4C4C4C;padding:40px;border-radius: 4px;}
+#ot-flow-form input[type='text'],#ot-flow-form textarea {
+  background-color: #3E3E3E;display: block;padding:7px; font-size: 14px; margin: 0 0px 14px;width: 698px; color: whiteSmoke;
+}
+#ot-flow-form input{height:40px;}
+
+#ot-flow-form hr{
+  width:100%;
+  border-color: whiteSmoke;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #767676;
+  margin: 15px auto;
+  background-color: black;
+  border-left: none;
+  border-right: none;
+  border-top-color: black;}
+#ot-flow-form input[type='submit']{
+  border-radius: 4px;background-color: #7DC36B;display: block;padding:0;font-weight: 300;height:56px; font-size: 14px;width: 713px; color: #ffffff;text-transform: uppercase;
+}
+#ot-flow-form input[type='submit']:hover{
+  cursor: pointer;background-color: #5EB348; }
