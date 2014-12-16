@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- meta -->
+    <meta charset="utf-8"/>
+    <meta name='description' content='<%= config.description %>'>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="<%= config.keywords %>"/>
+
+    <!-- style -->
+    <%- Loader('/public/stylesheets/style.css')
+    .done(assets, config.site_static_host, config.mini_assets)
+    %>
+</head>
+<body>
+    <div class="container">
+        <%- body %>
+    </div>
+</body>
+</html>
