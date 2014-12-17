@@ -12,15 +12,14 @@ var User = model.User;
 exports.login = function(req,res,next){
     var email = req.param('user.email');
     //通过用户的dao查询到用户的基本信息，通过email返回用户信息
-    (function(condition){
+    (function(condition,res){
         console.log(condition);
         User.findOne(condition,function (err, user) {
             if (err) {
                 return next(err);
             }
-            console.log(user);
             res.json(user);
         });
-    })({'email': email});
+    })({'email': email},res);
 
 };
