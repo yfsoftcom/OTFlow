@@ -18,7 +18,10 @@ exports.login = function(req,res,next){
             if (err) {
                 return next(err);
             }
-            res.json(user);
+            req.session.user = user;
+
+
+            res.redirect("/main");
         });
     })({'email': email},res);
 

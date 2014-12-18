@@ -10,6 +10,12 @@ module.exports = {
     description: '加班申请系统', // 描述
     keywords: '',
 
+    session_secret: 'otflow_secret',
+    auth_cookie_name: 'otflow',
+
+    // 程序运行的端口
+    port: 3000,
+
     // 邮箱配置
     mail_opts: {
         host: 'smtp.126.com',

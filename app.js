@@ -1,10 +1,14 @@
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var config = require('./config');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var MongoStore = require('connect-mongo')(session);
+
+
 
 var routes = require('./routes/index');
 
@@ -25,6 +29,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(require('cookie-parser')(config.session_secret));
+
+app.use(session({
+    secret: config.session_secret,
+    store: new MongoStore({
+        url: config.db
+    }),
+    resave: true,
+    saveUninitialized: true
+}));
 app.use('/', routes);
 
 // error handlers
