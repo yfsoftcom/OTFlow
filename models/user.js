@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
     pass:  String ,
-    email: String
+    email: String,
+    name:{type:String,default:'unnamed'}
 
 });
 

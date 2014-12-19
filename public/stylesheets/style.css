@@ -14,13 +14,12 @@ a{text-decoration: none;}
 /*   main stuff start  */
 
 .content{width:1000px;margin:0 auto;position: relative;}
-#sidebar{width:150px;position: absolute;}
+#sidebar{}
 #sidebar>a{border-radius: 4px;background-color: #5EB348;color: #ffffff;display: block;font-size: 18px;font-weight: 300;line-height: 44px;margin: 0 auto;text-align: center;text-transform: uppercase;width: 145px;}
 #sidebar>a:hover{background-color:#7DC36B; }
 #main{
-width:793px;padding-left:200px;padding-top:20px;
 }
-#main h2{text-align: center;margin-bottom: 20px;border-bottom:1px solid #cccccc;padding-bottom: 20px;}
+
 #ot-flow-form{background:#4C4C4C;padding:40px;border-radius: 4px;}
 #ot-flow-form input[type='text'],#ot-flow-form textarea {
   background-color: #3E3E3E;display: block;padding:7px; font-size: 14px; margin: 0 0px 14px;width: 698px; color: whiteSmoke;
@@ -42,3 +41,6 @@ width:793px;padding-left:200px;padding-top:20px;
 }
 #ot-flow-form input[type='submit']:hover{
   cursor: pointer;background-color: #5EB348; }
+
+
+#main fieldset{padding:30px;background:#eeeeee;border-radius: 4px;}
