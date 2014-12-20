@@ -5,6 +5,10 @@ exports.index = function (req, res, next) {
 
 
 exports.main = function (req, res, next) {
-    console.log('site main');
     res.render('main');
+};
+
+
+exports.create = function (req, res, next) {
+    res.render('itemform');
 };

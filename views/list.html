@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>列表</title>
+    <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="/bootstrap/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2" id="sidebar">
+                <div class="logo"></div>
+                <button class="btn btn-block btn-info">CREATE</button>
+            </div>
+            <div class="col-md-10" id="main">
+                <h2>Fill out the form</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Duaring</th>
+                        <th>Reason</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% if (items.length) { %>
+                    <% items.forEach(function(item){ %>
+
+                    <tr>
+                        <td>1</td>
+                        <td><%= item.reason %></td>
+                        <td><%= item %></td>
+                        <td>@mdo</td>
+                    </tr>
+                    <% }) %>
+                    <% }%>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导入js文件 -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
