@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>审核表单</title>
+    <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2" id="sidebar">
+                <div class="logo"></div>
+            </div>
+            <div class="col-md-10" id="main">
+                <blockquote><h2><span class="glyphicon glyphicon-eye-open" ></span> Review The OverTime Item Apply</h2></blockquote>
+                <hr/>
+                <fieldset>
+                    <table class="table bg-info" >
+                        <tr><td width="20%">Owner:</td><td><%= item.owner %></td></tr>
+                        <tr><td>Date:</td><td><%= item.createDate.format('yyyy-M-d hh:mm') %></td></tr>
+                        <tr><td>Hours:</td><td><%= item.hours %> H</td></tr>
+                        <tr><td>Reson</td><td><p><%= item.reason %></p></td></tr>
+                    </table>
+                    <form action="/item/approve" method="post">
+                        <input type="hidden" name="id" value="<%= item._id %>" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-block btn-success" type="submit"><span class="glyphicon glyphicon-ok" ></span> APPROVE</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-block btn-danger"><span class="glyphicon glyphicon-remove" ></span> REJECT</button>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

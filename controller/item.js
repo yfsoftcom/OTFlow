@@ -4,14 +4,13 @@ var Item = model.Item;
 
 exports.apply= function (req, res, next) {
     var user = req.session.user;
-    var item = new Item({userid:user._id,startTime:req.param('startTime'),endTime:req.param('endTime'),reason:req.param('reason')});
+    var item = new Item({userid:user._id,owner:user.name,hours:req.param('hours'),reason:req.param('reason')});
 
     item.save(function(err,result){
         if(err){
-            console.log(err);
-
+            return next(err);
         }
-        res.send('ok');
+        res.redirect('/user/item/list');
     });
 
 };
@@ -31,17 +30,36 @@ exports.list = function(req,res,next){
 };
 
 
+
 exports.approve = function(req,res,next){
-    console.log('item approve');
-    var id = req.param('id');
-    console.log('id= %s',id);
-    res.send('ok');
+    var condition = {_id:req.param('id')};
+    Item.update(condition,
+        {$set : {status:'approved',dealTime:new Date().format('yyyy-MM-dd hh:mm')}},
+        function(err,result){
+            res.redirect('/admin/item/list');
+    });
 };
 
 
 exports.reject = function(req,res,next){
-    console.log('item reject');
-    var id = req.param('id');
-    console.log('id= %s',id);
-    res.send('ok');
+    var condition = {_id:req.param('id')};
+    Item.update(condition,
+        {$set : {status:'rejected',dealTime:new Date().format('yyyy-MM-dd hh:mm')}},
+        function(err,result){
+            res.redirect('/admin/item/list');
+        });
 };
+
+
+exports.review = function(req,res,next){
+
+    console.log(req.params.id);
+    Item.findOne({_id:req.params.id},function(err,item){
+        if(err){
+            return next(err);
+        }
+        res.render('admin/review',{
+            item: item
+        });
+    });
+}

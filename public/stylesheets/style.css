@@ -9,16 +9,12 @@ a{text-decoration: none;}
 .login-form input{display: block;width: 323px;text-align: center;height:2.6em;margin-top:20px;border: 1px #C1C1C1 solid;border-radius: 3px;color: #2D2D2D;outline: none;font-family: inherit;font-size:18px;}
 .login-form input[type='submit']{color: #ffffff;background: #3686BB;border: none;}
 .login-form input[type='submit']:hover{background: #0086BB;cursor: pointer;}
-
+.login-other{width:323px;margin:0 auto;margin-top:2em;}
+.signup{margin-top:2em;text-decoration: underline;}
 
 /*   main stuff start  */
 
 .content{width:1000px;margin:0 auto;position: relative;}
-#sidebar{}
-#sidebar>a{border-radius: 4px;background-color: #5EB348;color: #ffffff;display: block;font-size: 18px;font-weight: 300;line-height: 44px;margin: 0 auto;text-align: center;text-transform: uppercase;width: 145px;}
-#sidebar>a:hover{background-color:#7DC36B; }
-#main{
-}
 
 #ot-flow-form{background:#4C4C4C;padding:40px;border-radius: 4px;}
 #ot-flow-form input[type='text'],#ot-flow-form textarea {

@@ -4,12 +4,12 @@ var Schema = mongoose.Schema;
 var ItemSchema = new Schema({
     reason:  String,
     createDate: { type: Date, default: Date.now },
-    startTime:String,
-    endTime:String,
+    hours:{type:Number,default:2},
     applyTime:String,
     dealTime:String,
     status:{type:String,default:'create'},
-    userid:String
+    userid:String,
+    owner:{type:String,default:''}
 });
 
 mongoose.model('Item', ItemSchema);

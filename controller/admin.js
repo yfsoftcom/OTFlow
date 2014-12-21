@@ -12,7 +12,7 @@ exports.list = function(req,res,next){
 
     console.log('admin item list');
     Item.find(function(err,result){
-        res.render('list',{
+        res.render('admin/list',{
             items: result
         });
     });

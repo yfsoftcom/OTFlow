@@ -4,8 +4,14 @@ exports.index = function (req, res, next) {
 };
 
 
-exports.main = function (req, res, next) {
-    res.render('main');
+exports.signup = function (req, res, next) {
+    res.render('signup');
+};
+
+exports.logout = function (req, res, next) {
+    req.session.user = undefined;
+    console.log('logout');
+    res.redirect('/');
 };
 
 

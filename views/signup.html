@@ -9,16 +9,13 @@
     <div class="container">
         <div class="login-content">
             <div class="logo"></div>
-            <!--登录表单-->
-            <form class="login-form" action="/user/login" method="post">
+            <!--signup form-->
+            <form class="login-form" action="/user/signup" method="post">
                 <input name="user.email" placeholder="Email Address" autocomplete="false" size="20"/>
+                <input name="user.name" placeholder="Name" type="text" size="20"/>
                 <input name="user.pass" placeholder="Password" type="password" size="20"/>
                 <input type="submit" value="Sign In" />
             </form>
-            <div class="login-other">
-                <a class="signup" href="/user/signup">Sign Up</a>
-            </div>
-
         </div>
     </div>
 </body>

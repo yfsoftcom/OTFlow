@@ -11,8 +11,14 @@ router.get('/', site.index);
 //用户登录
 router.post('/user/login', user.login);
 
-//获取主页
-router.get('/main', site.main);
+//用户登出
+router.get('/logout', site.logout);
+
+//用户注册
+router.get('/user/signup', site.signup);
+
+//用户注册
+router.post('/user/signup', user.signup);
 
 //获取填写表单的页面
 router.get('/item/create', site.create);
@@ -27,10 +33,12 @@ router.post('/item/approve',item.approve);
 router.post('/item/reject',item.reject);
 
 //获取申请列表
-router.get('/item/list',item.list);
+router.get('/user/item/list',user.list);
 
 //获取申请列表
 router.get('/admin/item/list',admin.list);
+
+router.get('/item/review/:id',item.review);
 
 
 module.exports = router;
