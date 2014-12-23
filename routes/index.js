@@ -27,16 +27,16 @@ router.get('/item/create', site.create);
 router.post('/item/apply',item.apply);
 
 //同意申请
-router.post('/item/approve',item.approve);
+router.get('/item/approve/:id',item.approve);
 
-//同意申请
-router.post('/item/reject',item.reject);
-
-//获取申请列表
-router.get('/user/item/list',user.list);
+//驳回申请
+router.get('/item/reject/:id',item.reject);
 
 //获取申请列表
-router.get('/admin/item/list',admin.list);
+router.get('/user/item/list/:status',user.list);
+
+//获取申请列表
+router.get('/admin/item/list/:status',admin.list);
 
 router.get('/item/review/:id',item.review);
 

@@ -22,19 +22,25 @@
                         <tr><td width="20%">Owner:</td><td><%= item.owner %></td></tr>
                         <tr><td>Date:</td><td><%= item.createDate.format('yyyy-M-d hh:mm') %></td></tr>
                         <tr><td>Hours:</td><td><%= item.hours %> H</td></tr>
-                        <tr><td>Reson</td><td><p><%= item.reason %></p></td></tr>
+                        <tr><td>Reson:</td><td><p><%= item.reason %></p></td></tr>
+                        <% if (item.status != 'create') { %>
+
+                        <tr><td>Status:</td><td><p><%= item.status %></p></td></tr>
+
+                        <% }%>
                     </table>
-                    <form action="/item/approve" method="post">
-                        <input type="hidden" name="id" value="<%= item._id %>" />
+                    <% if (item.status == 'create') { %>
+                    <form>
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn-block btn-success" type="submit"><span class="glyphicon glyphicon-ok" ></span> APPROVE</button>
+                                <a class="btn btn-block btn-success" href="/item/approve/<%= item._id %>"><span class="glyphicon glyphicon-ok" ></span> APPROVE</a>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-block btn-danger"><span class="glyphicon glyphicon-remove" ></span> REJECT</button>
+                                <a class="btn btn-block btn-danger" href="/item/reject/<%= item._id %>"><span class="glyphicon glyphicon-remove" ></span> REJECT</a>
                             </div>
                         </div>
                     </form>
+                    <% }%>
                 </fieldset>
 
             </div>

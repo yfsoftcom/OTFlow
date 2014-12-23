@@ -9,9 +9,9 @@ var Item = model.Item;
  * @param next
  */
 exports.list = function(req,res,next){
-
-    console.log('admin item list');
-    Item.find(function(err,result){
+    var status = req.params.status;
+    var condition = status=='all' ? {}:{status:status};
+    Item.find(condition).sort({createDate:-1}).exec(function(err,result){
         res.render('admin/list',{
             items: result
         });

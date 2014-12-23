@@ -21,10 +21,10 @@ exports.login = function(req,res,next){
             req.session.user = user;
             if(user.isAdmin){
                 //管理员
-                res.redirect("/admin/item/list");
+                res.redirect("/admin/item/list/all");
             }else{
                 //普通用户
-                res.redirect("/user/item/list");
+                res.redirect("/user/item/list/all");
             }
 
         });
@@ -49,10 +49,10 @@ exports.signup = function(req,res,next){
             req.session.user = user;
             if(user.isAdmin){
                 //管理员
-                res.redirect("/admin/item/list");
+                res.redirect("/admin/item/list/all");
             }else{
                 //普通用户
-                res.redirect("/user/item/list");
+                res.redirect("/user/item/list/all");
             }
         });
 
@@ -67,9 +67,10 @@ exports.signup = function(req,res,next){
  */
 exports.list = function(req,res,next){
     var user = req.session.user;
-    console.log(user);
+    var status = req.params.status;
+    var condition = status=='all' ? {userid:user._id}:{userid:user._id,status:status};
     (function(condition,res){
-        Item.find(condition,function(err,result){
+        Item.find(condition).sort({createDate:-1}).exec(function(err,result){
             if(err){
                 return next(err);
             }
@@ -77,5 +78,5 @@ exports.list = function(req,res,next){
                 items: result
             });
         });
-    })({userid:user._id},res);
+    })(condition,res);
 };
