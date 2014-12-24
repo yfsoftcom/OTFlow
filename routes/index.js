@@ -20,6 +20,14 @@ router.get('/user/signup', site.signup);
 //用户注册
 router.post('/user/signup', user.signup);
 
+
+//用户修改密码
+router.get('/user/modifypwd', site.modifypwd);
+
+//用户修改密码
+router.post('/user/modifypwd', user.modifypwd);
+
+
 //获取填写表单的页面
 router.get('/item/create', site.create);
 

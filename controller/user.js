@@ -31,6 +31,18 @@ exports.login = function(req,res,next){
     })({'email': email},res);
 };
 
+exports.modifypwd = function(req,res,next){
+    var condition = {_id:req.session.user._id};
+    //通过用户的dao查询到用户的基本信息，通过email返回用户信息
+    (function(condition,sets,res){
+        User.update(condition,
+            {$set : sets},
+            function(err,result){
+                res.send('New Password Commit!');
+            });
+    })(condition,{pass:req.param('user.newpass')},res);
+};
+
 /**
  * 用户注册的控制器
  * @param req

@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>列表</title>
+    <title>List</title>
     <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="/bootstrap/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css"/>
     <link href="/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -16,7 +15,7 @@
                 <div class="logo"></div>
                 <div class="btn-group-vertical btn-block">
                     <a class="btn btn-block btn-info" href="/item/create"><span class="glyphicon glyphicon-file"></span> CREATE</a>
-                    <a class="btn btn-warning"><span class="glyphicon glyphicon-lock"></span> SECURITY</a>
+                    <a class="btn btn-warning" href="/user/modifypwd"><span class="glyphicon glyphicon-lock"></span> SECURITY</a>
                     <a class="btn btn-danger" href="/logout"><span class="glyphicon glyphicon-log-out"></span> LOG OUT</a>
                 </div>
             </div>
@@ -60,28 +59,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 导入js文件 -->
-    <script src="/jquery/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>

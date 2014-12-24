@@ -18,3 +18,8 @@ exports.logout = function (req, res, next) {
 exports.create = function (req, res, next) {
     res.render('itemform');
 };
+
+
+exports.modifypwd = function (req, res, next) {
+    res.render('modifypass');
+};

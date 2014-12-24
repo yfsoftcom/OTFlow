@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>填写表单</title>
+    <title>Fill Out The Form</title>
     <link href="/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="/bootstrap/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css"/>
     <link href="/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -14,10 +13,14 @@
         <div class="row">
             <div class="col-md-2" id="sidebar">
                 <div class="logo"></div>
-                <button class="btn btn-block btn-info">CREATE</button>
+                <div class="btn-group-vertical btn-block">
+                    <a class="btn btn-primary" href="/user/item/list/all"><span class="glyphicon glyphicon-th-list"></span> RECORDS</a>
+                    <a class="btn btn-warning" href="/user/modifypwd"><span class="glyphicon glyphicon-lock"></span> SECURITY</a>
+                    <a class="btn btn-danger" href="/logout"><span class="glyphicon glyphicon-log-out"></span> LOG OUT</a>
+                </div>
             </div>
             <div class="col-md-10" id="main">
-                <blockquote><h2><span class="glyphicon glyphicon-pencil" ></span> Fill out the form</h2></blockquote>
+                <blockquote><h2><span class="glyphicon glyphicon-pencil" ></span> Fill Out The Form</h2></blockquote>
                 <fieldset>
                     <form role="form" method="post" action="/item/apply">
                         <div class="form-group">
@@ -33,9 +36,6 @@
             </div>
         </div>
     </div>
-
-    <!-- 导入js文件 -->
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>
